@@ -46,13 +46,3 @@ function Links({ links }) {
 
 export default Links;
 
-// return (
-//   <a
-//     key={index}
-//     href={link.url}
-//     target="_blank"
-//     rel="noopener noreferrer"
-//   >
-//     <Icon /> {link.name}
-//   </a>
-// );
