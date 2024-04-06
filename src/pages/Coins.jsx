@@ -2,21 +2,18 @@ import { useEffect, useState } from "react";
 import CoinList from "../features/dashboard/CoinList";
 import Spinner from "../features/dashboard/Spinner";
 import { useGetListOfCoins } from "../features/dashboard/useGetListOfCoins";
-import { stats } from "../services/helper";
 import Heading from "../ui/Heading";
 
 function Coins() {
   const { isLoading, list } = useGetListOfCoins(100);
   const coins = list?.data?.coins || [];
   const [filteredCoins, setFilteredCoins] = useState([]);
-  //   console.log(list);
-  //   const list = stats.data.coins;
+
 
   useEffect(() => {
     if (!isLoading) {
       setFilteredCoins(coins);
     }
-    // setFilteredCoins(list);
   }, [isLoading, coins]);
 
   function filterList(value) {

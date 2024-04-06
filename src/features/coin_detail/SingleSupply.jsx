@@ -3,7 +3,6 @@ import PropTypes from "prop-types";
 
 SingleSupply.propTypes = {
   label: PropTypes.string,
-  icon: PropTypes.object,
   value: PropTypes.string,
   date: PropTypes.string,
 };

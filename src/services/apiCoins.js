@@ -5,7 +5,6 @@ const API_KEY = import.meta.env.VITE_API_KEY;
 const API_URL = "https://api.coinranking.com/v2";
 
 export async function getGlobalStats() {
-  console.log(API_KEY);
   const res = await fetch(`${API_URL}/stats`, {
     method: "GET",
     headers: {
@@ -30,7 +29,6 @@ export async function getCoinDetails(coinId) {
 }
 
 export async function getListOfCoins(limit) {
-  console.log("in API");
   const res = await fetch(`${API_URL}/coins?limit=${limit}`, {
     method: "GET",
     headers: {
@@ -38,7 +36,6 @@ export async function getListOfCoins(limit) {
     },
   });
   const data = await res.json();
-  console.log(data);
   return data;
 }
 export async function getPriceHistory(coinId, timePeriod) {

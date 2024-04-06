@@ -34,14 +34,14 @@ function CoinSupply({ details }) {
         }
       />
       <div className="border-t border-gray-300"></div>
-      <SingleSupply label="Maximum Supply" value={formatCurrency(details.supply.max)} />
+      <SingleSupply label="Maximum Supply" value={details.supply.max ? formatNumber(details.supply.max) : "0.00"} />
       <div className="border-t border-gray-300"></div>
-      <SingleSupply label="Total Supply" value={formatCurrency(details.supply.total)} />
+      <SingleSupply label="Total Supply" value={formatNumber(details.supply.total)} />
 
       <div className="border-t border-gray-300"></div>
       <SingleSupply
         label="Circulating supply"
-        value={formatCurrency(details.supply.circulating)}
+        value={formatNumber(details.supply.circulating)}
       />
       <div className="border-t-4 border-gray-800"></div>
       <SingleStat

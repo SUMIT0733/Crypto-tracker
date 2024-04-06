@@ -1,11 +1,11 @@
-import { useQuery } from "@tanstack/react-query";
 import { getCoinDetails } from "../../services/apiCoins";
+import { useQuery } from "@tanstack/react-query";
 
 export function useCoinDetails(coinId) {
-  const { isLoading, data } = useQuery({
-    queryKey: [coinId],
+  // debugger
+  const { isLoading, data, refetch } = useQuery({
+    queryKey: [`coinId-${coinId}`],
     queryFn: () => getCoinDetails(coinId),
   });
-  // console.log(data);
-  return { isLoading, data };
+  return { isLoading, data, refetch };
 }

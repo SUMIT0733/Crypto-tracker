@@ -15,7 +15,6 @@ BestCoinDetails.propTypes = {
 
 function BestCoinDetails({ icon, title, cap, rank, allTimeHigh, price, id }) {
   const navigate = useNavigate();
-  // console.log(id);
   function handleCoinClick() {
     navigate(`/coin/${id}`);
   }
@@ -40,8 +39,8 @@ function BestCoinDetails({ icon, title, cap, rank, allTimeHigh, price, id }) {
       <p className="text-2xl font-medium leading-none">
         <strong>Market Cap:</strong> {formatCurrency(cap)}
       </p>
-      <div className="flex gap-3">
-        <p className="text-2xl font-medium leading-none">
+      <div className="flex gap-3 items-center">
+        <p className="text-2xl font-medium leading-none items-center">
           <strong>Price</strong> : {formatCurrency(price)}
         </p>
         {allTimeHigh && (

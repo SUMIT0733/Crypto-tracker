@@ -39,11 +39,6 @@ function PriceChart({ filter }) {
   const dataMin = Math.min(...prices);
   const dataMax = Math.max(...prices);
 
-  const range = dataMax - dataMin;
-  const padding = range * 0.05;
-  const interval = range / 5;
-  const ticks = Array.from({ length: 6 }, (_, i) => dataMin + interval * i);
-
   return (
     <ResponsiveContainer width="100%" height={400} className="mt-6">
       <AreaChart data={price_data} margin={{ bottom: 50 }}>
@@ -54,7 +49,7 @@ function PriceChart({ filter }) {
           tickLine={{ stroke: color.text }}
         />
         <YAxis
-          // domain={[Math.floor(dataMin / 10) - padding, Math.ceil(dataMax / 10) + padding]}
+          domain={[0, Math.ceil(dataMax / 10)]}
           // ticks={ticks}
           tick={{ fill: color.text }}
           tickLine={{ stroke: color.text }}

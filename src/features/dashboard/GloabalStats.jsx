@@ -25,7 +25,7 @@ function GloabalStats({ stats }) {
       <Stat
         icon={<HiMiniHome className="w-13 h-13 text-red-700" />}
         title="Exchanges"
-        value={stats.totalExchanges}
+        value={formatNumber(stats.totalExchanges)}
         color="red"
       ></Stat>
       <Stat
