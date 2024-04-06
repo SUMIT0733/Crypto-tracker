@@ -1,24 +1,20 @@
-import Heading from "../ui/Heading";
+import { useParams } from "react-router-dom";
 import { useState } from "react";
-import PriceChart from "../features/coin_detail/PriceChart";
-import { useNavigate, useParams } from "react-router-dom";
 import { IoIosInformationCircleOutline } from "react-icons/io";
+import { Tooltip } from "react-tooltip";
+
+import Heading from "../ui/Heading";
+import PriceChart from "../features/coin_detail/PriceChart";
 import { coin_data, formatCurrency } from "../services/helper";
 import CoinStats from "../features/coin_detail/CoinStats";
 import CoinSupply from "../features/coin_detail/CoinSupply";
-import { Tooltip } from "react-tooltip";
 import Links from "../features/coin_detail/Links";
 
 function CoinDetails() {
   const { coinId } = useParams();
   const [currentFilter, setCurrentFilter] = useState("12h");
   const coin = coin_data.data.coin;
-
-  // const { isLoading, data: coin_data1 } = useCoinDetails(coinId);
-  // console.log(coin_data1.data.coin);
-
-  // const coin = data.data.coin;
-  // console.log(coin);
+ 
   const options = [
     { value: "12h", label: "12 Hour" },
     { value: "24h", label: "24 Hour" },
@@ -37,9 +33,9 @@ function CoinDetails() {
     window.open(coin.websiteUrl, "_blank");
   }
 
-  //   if (isLoading) {
-  //     return <Spinner />;
-  //   }
+  // if (isLoading) {
+  //   return <Spinner />;
+  // }
 
   return (
     <div className="m-auto flex w-full flex-col">
@@ -67,9 +63,9 @@ function CoinDetails() {
             <button
               key={option.value}
               onClick={() => handleClick(option.value)}
-              className={`rounded-lg border-none bg-gray-100 text-2xl font-medium ${
+              className={`rounded-lg border-none  text-2xl font-medium ${
                 currentFilter === option.value
-                  ? "bg-blue-600 text-blue-50"
+                  ? "bg-blue-600 text-gray-50"
                   : "hover:bg-blue-600 hover:text-blue-50"
               } px-2 py-1 transition-all duration-300`}
               disabled={currentFilter === option.value}
@@ -93,14 +89,11 @@ function CoinDetails() {
       <PriceChart filter={currentFilter} />
       <div className="mt-10 grid grid-cols-2 justify-between gap-36">
         <CoinStats stats={coin} />
-        {/* <CoinStats stats={coin}/> */}
         <CoinSupply details={coin} />
       </div>
 
       <div className=" flex flex-col items-center justify-center">
-        <p className="mb-16 mt-28 text-[2.5rem] font-bold">
-          Useful Links
-        </p>
+        <p className="mb-16 mt-28 text-[2.5rem] font-bold">Useful Links</p>
         <Links links={coin.links} />
       </div>
     </div>

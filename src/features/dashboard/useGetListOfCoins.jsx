@@ -6,7 +6,6 @@ export function useGetListOfCoins(limit = 10) {
     queryKey: [`ListOfCoins-${limit}`],
     queryFn: () => getListOfCoins(limit),
   });
-  console.log(list)
 
   return { isLoading, list };
 }
