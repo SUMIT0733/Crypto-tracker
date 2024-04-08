@@ -9,7 +9,7 @@ function Logo() {
   
   return (
     <div className="flex justify-center text-center" onClick={handleClick}>
-      <img src="/logo.jpg" className="h-36 w-auto" />
+      <img src="/side_icon.jpg" className="h-36 w-auto" />
     </div>
   );
 }
