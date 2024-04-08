@@ -9,6 +9,9 @@ CoinList.propTypes = {
 };
 
 function CoinList({ list, showLink }) {
+
+  const sortedList = [...list].sort((a, b) => b.price - a.price);
+
   return (
     <div className="flex flex-col gap-y-4">
       {showLink && (

@@ -7,7 +7,7 @@ function CustomToolTip({ active, payload, filter }) {
   if (active && payload && payload.length) {
     return (
       <div className="rounded border bg-white p-3 text-black shadow">
-        <p className="label">{`Price : ${formatCurrency(payload[0].value)}`}</p>
+        <p className="label">{`Price : ${formatCurrency(payload[0].value, 6)}`}</p>
         <p className="intro">{`Time: ${payload[0].payload.timestamp}`}</p>
       </div>
     );
