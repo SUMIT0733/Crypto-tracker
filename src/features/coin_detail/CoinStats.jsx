@@ -19,13 +19,13 @@ function CoinStats({ stats }) {
       <SingleStat
         label="Price to USD"
         icon={<HiOutlineCurrencyDollar className="h-11 w-11 text-blue-500" />}
-        value={formatCurrency(stats.price)}
+        value={formatCurrency(stats.price, 6)}
       />
       <div className="border-t border-gray-300"></div>
       <SingleStat
         label="Price to Bitcoin"
         icon={<MdCurrencyBitcoin className="h-11 w-11 text-blue-500" />}
-        value={`${parseFloat(stats.btcPrice).toFixed(2)} BTC`}
+        value={`${parseFloat(stats.btcPrice).toFixed(4)} BTC`}
       />
       <div className="border-t border-gray-300"></div>
       <SingleStat
@@ -49,7 +49,7 @@ function CoinStats({ stats }) {
       <SingleStat
         label="Highest Price"
         icon={<PiMedalLight className="h-11 w-11 text-blue-500" />}
-        value={formatCurrency(stats.allTimeHigh.price)}
+        value={formatCurrency(stats.allTimeHigh.price, 6)}
         date={stats.allTimeHigh.timestamp}
       />
       <div className="border-t border-gray-300"></div>

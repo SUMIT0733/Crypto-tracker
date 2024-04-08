@@ -79,7 +79,7 @@ function CoinDetailPage() {
       <span>
         Price:{" "}
         <span className="text-2xl font-bold">
-          {formatCurrency(coin.price)}
+          {formatCurrency(coin.price, 6)}
         </span>
       </span>
       <p

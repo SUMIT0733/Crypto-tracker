@@ -17,7 +17,7 @@ function LinkItem({ icon, link, linkName }) {
       onClick={handleClickLink}
     >
       <div className="inline-flex items-center justify-center border rounded-full border-gray-500 p-4">{icon}</div>
-      <p className="">{linkName}</p>
+      <p className="overflow-hidden">{linkName}</p>
     </div>
   );
 }

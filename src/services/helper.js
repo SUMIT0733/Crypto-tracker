@@ -1,9 +1,9 @@
-export const formatCurrency = (value) =>
+export const formatCurrency = (value, digit = 2) =>
   new Intl.NumberFormat("en-US", {
     style: "currency",
     currency: "USD",
     notation: "compact",
-    minimumFractionDigits: 2,
+    minimumFractionDigits: digit,
     compactDisplay: "short",
   })
     .format(value)
@@ -17,10 +17,11 @@ export const formatCurrencyForChart = (value) =>
     compactDisplay: "short",
   }).format(value);
 
-  
-
 export const formatNumber = (value) =>
-parseFloat(value).toFixed(2).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  parseFloat(value)
+    .toFixed(2)
+    .toString()
+    .replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 
 export const date_format = {
   "12h": "HH:mm",
