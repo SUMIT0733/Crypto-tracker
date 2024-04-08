@@ -19,21 +19,23 @@ const queryClient = new QueryClient({
   },
 });
 
-const routes = createBrowserRouter([
-  {
-    element: <AppLayout />,
-    children: [
-      { path: "/", element: <Navigate to="/dashboard" replace /> },
-      { path: "/dashboard", element: <Dashboard /> },
-      { path: "/coins", element: <Coins /> },
-      { path: "/coin/:coinId", element: <CoinDetailPage /> },
-    ],
-  },
-  {
-    path: "*",
-    element: <PageNotFound />,
-  },
-]);
+const routes = createBrowserRouter(
+  [
+    {
+      element: <AppLayout />,
+      children: [
+        { path: "/", element: <Navigate to="/dashboard" replace /> },
+        { path: "/dashboard", element: <Dashboard /> },
+        { path: "/coins", element: <Coins /> },
+        { path: "/coin/:coinId", element: <CoinDetailPage /> },
+      ],
+    },
+    {
+      path: "*",
+      element: <PageNotFound />,
+    },
+  ],
+);
 
 function App() {
   return (
